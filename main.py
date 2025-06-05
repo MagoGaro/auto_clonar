@@ -3,6 +3,9 @@ import pandas as pd
 import subprocess
 from openpyxl import load_workbook
 
+
+#crear entorno virtual e instalar paquetes con el .txt
+
 def clonar_repositorios_desde_excel(archivo_excel, hoja=0):  
     try:
         df = pd.read_excel(archivo_excel, sheet_name=hoja)
