@@ -2,9 +2,9 @@
 
 ### Integrantes
 
-Sergio
-Salvador
-Romina
-Kiara
-Ale
+Sergio<br>
+Salvador<br>
+Romina<br>
+Kiara<br>
+Ale<br>
 Caro
