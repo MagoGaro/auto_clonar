@@ -36,9 +36,8 @@ if exist %VENV_NAME% (
         pause
         exit /b
     )
-)
-
-echo Creando entorno virtual con %PY_CMD%...
+) else (
+    echo Creando entorno virtual con %PY_CMD%...
 %PY_CMD% -m venv %VENV_NAME%
 if %errorlevel% neq 0 (
     echo ERROR: No se pudo crear el entorno virtual.
@@ -46,7 +45,7 @@ if %errorlevel% neq 0 (
     exit /b
 )
 
-call %VENV_NAME%\Scripts\activate
+call .\%VENV_NAME%\Scripts\activate
 
 echo Ingrese el nombre del archivo de requerimientos:
 echo Dejar vacio para usar el predeterminado (requirements.txt):
@@ -63,7 +62,11 @@ if "%REQ_FILE%"=="" (
 echo Instalando dependencias...
 pip install -r %REQ_FILE%
 
+pip list
+
 echo.
 echo Entorno %VENV_NAME% creado exitosamente con %PY_CMD%
 echo Para activar: %VENV_NAME%\Scripts\activate
 pause
+)
+
